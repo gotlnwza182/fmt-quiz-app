@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import questionType from "../models/questionType";
 import Icon from "./Icon";
-import { appStateContext } from "../page";
+import { AppStateContext } from "../management/context";
 
 type Props = { questionData: questionType[]; result: number; quiz: number };
 
 export default function Result({ questionData, result, quiz }: Props) {
-  const { appState, setAppState } = useContext(appStateContext);
+  const { appState, setAppState } = useContext(AppStateContext);
 
   function playAgain() {
     setAppState({ type: "menu", title: "" });

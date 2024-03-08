@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AppStateProvider } from "./management/context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} bg-light-pattern-mobile md:bg-light-pattern-tablet lg:bg-light-pattern-desktop bg-cover bg-Light-Gray dark:bg-Dark-Navy dark:bg-dark-pattern-mobile md:dark:bg-dark-pattern-tablet lg:dark:bg-dark-pattern-desktop`}
-      >
-        {children}
-      </body>
+      <AppStateProvider>
+        <body
+          className={`${inter.className} bg-light-pattern-mobile md:bg-light-pattern-tablet lg:bg-light-pattern-desktop bg-cover bg-Light-Gray dark:bg-Dark-Navy dark:bg-dark-pattern-mobile md:dark:bg-dark-pattern-tablet lg:dark:bg-dark-pattern-desktop`}
+        >
+          {children}
+        </body>
+      </AppStateProvider>
     </html>
   );
 }

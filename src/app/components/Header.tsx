@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { appStateContext } from "../page";
+import { AppStateContext } from "../management/context";
 import questionType from "../models/questionType";
 import Icon from "./Icon";
 
 type Props = { questionData: questionType[] };
 
 export default function Header({ questionData }: Props) {
-  const { appState, isDark, setIsDark } = useContext(appStateContext);
+  const { appState, isDark, setIsDark } = useContext(AppStateContext);
 
   function darkMode() {
     if (isDark) {

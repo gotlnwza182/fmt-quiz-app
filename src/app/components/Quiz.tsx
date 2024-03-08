@@ -3,7 +3,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import questionType from "../models/questionType";
 import Image from "next/image";
-import { appStateContext } from "../page";
+import { AppStateContext } from "../management/context";
 
 type Props = {
   questionData: questionType[];
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Question({ questionData, setResult, quiz }: Props) {
-  const { appState, setAppState } = useContext(appStateContext);
+  const { appState, setAppState } = useContext(AppStateContext);
   const [current, setCurrent] = useState<number>(0);
   const [answer, setAnswer] = useState("");
   const [total, setTotal] = useState(0);

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import questionType from "../models/questionType";
-import { appStateContext } from "../page";
+import { AppStateContext } from "../management/context";
+
 import Icon from "./Icon";
 
 type Props = { questionData: questionType[] };
 
 export default function Question({ questionData }: Props) {
-  const { appState, setAppState } = useContext(appStateContext);
+  const { appState, setAppState } = useContext(AppStateContext);
 
   return (
     <div className="flex flex-col lg:flex-row justify-between">

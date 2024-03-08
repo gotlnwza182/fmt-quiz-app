@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { appStateContext } from "../page";
+import { AppStateContext } from "../management/context";
 import questionType from "../models/questionType";
 
 type Props = {
@@ -16,7 +16,7 @@ export default function Icon({
   width = 32.5,
   heigth = 25,
 }: Props) {
-  const { appState } = useContext(appStateContext);
+  const { appState } = useContext(AppStateContext);
 
   function iconBg(title: string) {
     switch (title) {
